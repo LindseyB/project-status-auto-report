@@ -11,6 +11,7 @@ projectQuery = <<~GRAPHQL
             node {
               name
               cards(first: 25) {
+                totalCount
                 edges {
                   node {
                     content {
@@ -63,7 +64,7 @@ body = ""
 body += "# #{title} ✨ \n"
 
 res["data"]["repository"]["project"]["columns"]["edges"].each do |column|
-  body += "## #{column["node"]["name"]}\n\n"
+  body += "## #{column["node"]["name"]} (total: #{column["node"]["cards"]["totalCount"]})\n\n"
 
   column["node"]["cards"]["edges"].each do |card|
     issue = card["node"]["content"]
@@ -75,7 +76,7 @@ res["data"]["repository"]["project"]["columns"]["edges"].each do |column|
 
     attribution_string = assigneesArr.any? ? "by #{assigneesArr.join(',')}" : ""
 
-    puts "* [#{issue["title"]}](#{issue["url"]}) #{attribution_string}\n"
+    body += "* [#{issue["title"]}](#{issue["url"]}) #{attribution_string}\n"
   end
 
   puts "\n"
