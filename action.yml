@@ -1,9 +1,9 @@
 
-name: pull request on bundle update
-description: bundle update and pull request
+name: Project Status Auto Report
+description: Creates an issue automatically with 
 branding:
-  icon: 'git-pull-request'
-  color: 'green'
+  icon: 'calendar'
+  color: 'purple'
 inputs:
   github_token:
     description: github token
