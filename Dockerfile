@@ -5,7 +5,8 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
   apk add --no-cache \
   git \
   hub \
-  bash
+  bash \
+  ruby
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
