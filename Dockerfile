@@ -6,7 +6,13 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
   git \
   hub \
   bash \
-  ruby
+  ruby \
+  libxml2-dev \
+  curl-dev \
+  make \
+  gcc \
+  libc-dev \
+  g++
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /
