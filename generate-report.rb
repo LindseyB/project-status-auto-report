@@ -74,7 +74,7 @@ res["data"]["repository"]["project"]["columns"]["edges"].each do |column|
 
     attribution_string = assigneesArr.any? ? "by #{assigneesArr.join(',')}" : ""
 
-    puts "* [#{issue["title"]}]\(#{issue["url"]}\) #{attribution_string} \\ \n"
+    puts "* [#{issue["title"]}]\\(#{issue["url"]}\\) #{attribution_string} \\ \n"
   end
 
   puts "\\ \n"
