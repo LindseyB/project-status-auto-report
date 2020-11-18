@@ -20,7 +20,7 @@ fi
 git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
 git checkout master
 
-gem install json
+gem install json --no-rdoc
 REPORT="$(ruby /generate-report.rb)"
 
 export GITHUB_USER="$GITHUB_ACTOR"
