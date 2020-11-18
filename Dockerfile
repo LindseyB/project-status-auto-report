@@ -6,7 +6,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
   git \
   hub \
   bash \
-  ruby \
+  ruby-dev \
   libxml2-dev \
   curl-dev \
   make \
