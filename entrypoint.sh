@@ -28,7 +28,7 @@ export GITHUB_USER="$GITHUB_ACTOR"
 git config --global user.name $GIT_USER_NAME
 git config --global user.email $GIT_EMAIL
 
-COMMAND="hub issue create -m $REPORT -l status"
+COMMAND="hub issue create  -l status -m \"$REPORT\""
 
 echo "$COMMAND"
 sh -c "$COMMAND"
