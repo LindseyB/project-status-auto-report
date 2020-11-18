@@ -12,6 +12,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 COPY generate-report.rb .
+RUN chmod +x generate-report.rb
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
