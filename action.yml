@@ -21,3 +21,6 @@ runs:
     GITHUB_TOKEN: ${{ inputs.github_token }}
     GIT_USER_NAME: ${{ inputs.git_user_name }}
     GIT_EMAIL: ${{ inputs.git_email }}
+    PROJECT_ID: ${{ inputs.project_id }}
+    REPO_OWNER: ${{ inputs.repo_owner }}
+    REPO_NAME: ${{ inputs.repo_name }}
