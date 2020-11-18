@@ -7,18 +7,21 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
   exit 1
 fi
 
-if [[ -z "$GIT_USER_NAME" ]]; then
-    echo "require to set with: GIT_USER_NAME."
+if [[ -z "$PROJECT_ID" ]]; then
+    echo "require to set with: PROJECT_ID."
   exit 1
 fi
 
-if [[ -z "$GIT_EMAIL" ]]; then
-  echo "require to set with: GIT_EMAIL."
+if [[ -z "$REPO_OWNER" ]]; then
+  echo "require to set with: REPO_OWNER."
   exit 1
 fi
 
-git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
-git checkout master
+if [[ -z "$REPO_NAME" ]]; then
+  echo "require to set with: REPO_NAME."
+  exit 1
+fi
+
 
 gem install json --no-document
 ruby /generate-report.rb
