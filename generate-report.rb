@@ -78,7 +78,7 @@ res["data"]["repository"]["project"]["columns"]["edges"].each do |column|
     puts "* [#{issue["title"]}](#{issue["url"]}) #{attribution_string}\n"
   end
 
-  puts "\\ \n"
+  puts "\n"
 end
 
 
