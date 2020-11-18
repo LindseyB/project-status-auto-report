@@ -56,13 +56,13 @@ end
 res = JSON.parse(response.body)
 time = Time.new
 
-title = "Weekly Status Report for the Week of #{time.strftime("%m/%d")}\\"
+title = "Weekly Status Report for the Week of #{time.strftime("%m/%d")}"
 
 puts title
 puts "# #{title} ✨\\"
 
 res["data"]["repository"]["project"]["columns"]["edges"].each do |column|
-  puts "## #{column["node"]["name"]}\n\n\\"
+  puts "## #{column["node"]["name"]}\\\n\n"
 
   column["node"]["cards"]["edges"].each do |card|
     issue = card["node"]["content"]
@@ -74,8 +74,8 @@ res["data"]["repository"]["project"]["columns"]["edges"].each do |column|
 
     attribution_string = assigneesArr.any? ? "by #{assigneesArr.join(',')}" : ""
 
-    puts "* [#{issue["title"]}](#{issue["url"]}) #{attribution_string}\n\\"
+    puts "* [#{issue["title"]}]\(#{issue["url"]}\) #{attribution_string}\\\n"
   end
 
-  puts "\n\\"
+  puts "\\\n"
 end
