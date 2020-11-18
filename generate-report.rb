@@ -4,8 +4,8 @@ require 'json'
 
 projectQuery = <<~GRAPHQL
   query {
-    repository(name: "Shopping-Expansion-Team", owner:"stitchfix") {
-      project(number:4){
+    repository(name: #{ENV["REPO_NAME"]}, #{ENV["REPO_OWNER"]}) {
+      project(number: #{ENV["PROJECT_ID"]}){
         columns(last: 4) {
           edges {
             node {
@@ -83,7 +83,7 @@ res["data"]["repository"]["project"]["columns"]["edges"].each do |column|
 end
 
 
-uri = URI.parse("https://api.github.com/repos/stitchfix/Shopping-Expansion-Team/issues")
+uri = URI.parse("https://api.github.com/repos/#{ENV["REPO_OWNER"]}/#{ENV["REPO_NAME"]}/issues")
 request = Net::HTTP::Post.new(uri)
 request["Accept"] = "application/vnd.github.v3+json"
 request["Authorization"] = "token #{ENV["GITHUB_TOKEN"]}"
