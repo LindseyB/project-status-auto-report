@@ -85,6 +85,7 @@ end
 uri = URI.parse("https://api.github.com/repos/stitchfix/Shopping-Expansion-Team/issues")
 request = Net::HTTP::Post.new(uri)
 request["Accept"] = "application/vnd.github.v3+json"
+request["Authorization"] = "token #{ENV["GITHUB_TOKEN"]}"
 request.body = JSON.dump({
   "title" => title,
   "body" => body,
