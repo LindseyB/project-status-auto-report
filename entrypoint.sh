@@ -22,8 +22,8 @@ git checkout master
 
 echo "where are we?"
 ls
-cwd
-REPORT="$(ruby generate-report.rb)"
+pwd
+REPORT="$(ruby /generate-report.rb)"
 
 export GITHUB_USER="$GITHUB_ACTOR"
 
