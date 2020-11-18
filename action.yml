@@ -8,19 +8,20 @@ inputs:
   github_token:
     description: github token
     required: true
-  git_user_name:
-    description: user name who git push bundle update commit
+  project_id:
+    description: the project to generate the report for
     required: true
-  git_email:
-    description: email of user who git push bundle update commit
+  repo_owner:
+    description: the owner of the repo the project is in
+    required: true
+  repo_name:
+    description: the name of the repo the project is in
     required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
     GITHUB_TOKEN: ${{ inputs.github_token }}
-    GIT_USER_NAME: ${{ inputs.git_user_name }}
-    GIT_EMAIL: ${{ inputs.git_email }}
     PROJECT_ID: ${{ inputs.project_id }}
     REPO_OWNER: ${{ inputs.repo_owner }}
     REPO_NAME: ${{ inputs.repo_name }}
