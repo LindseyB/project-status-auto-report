@@ -4,8 +4,8 @@ require 'json'
 
 projectQuery = <<~GRAPHQL
   query {
-    repository(name: "Shopping-Expansion-Team", "stitchfix") {
-      project(number: 4){
+    repository(name: #{ENV["REPO_NAME"]}, owner: #{ENV["REPO_OWNER"]}) {
+      project(number: #{ENV["PROJECT_ID"]}){
         columns(last: 4) {
           edges {
             node {
